@@ -9,7 +9,7 @@ Este projeto foi criado como um exercício prático para demonstrar habilidades 
 
 ---
 
-## 🚀 Demonstração Ao Vivo
+## 🚀 Demonstração
 
 O aplicativo roda diretamente no  navegador pelo link do Expo Snack Web, sem precisar instalar nada!
 
