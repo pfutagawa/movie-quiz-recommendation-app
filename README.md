@@ -13,7 +13,7 @@ Este projeto foi criado como um exercício prático para demonstrar habilidades 
 
 O aplicativo roda diretamente no  navegador pelo link do Expo Snack Web, sem precisar instalar nada!
 
-**[➡️ Clique aqui para acessar a demonstração ao vivo!](SEU_LINK_DO_EXPO_SNACK_AQUI)**
+**[➡️ Clique aqui para acessar a demonstração ao vivo!]([SEU_LINK_DO_EXPO_SNACK_AQUI](https://snack-web-player.s3.us-west-1.amazonaws.com/v2/54/index.html?initialUrl=exp%3A%2F%2Fu.expo.dev%2F933fd9c0-1666-11e7-afca-d980795c5824%3Fruntime-version%3Dexposdk%253A54.0.0%26channel-name%3Dproduction%26snack%3D%2540pfut%252Fmovie-quiz-app%26snack-channel%3Daqv8rgnY2B&origin=https%3A%2F%2Fsnack.expo.dev&verbose=false))**
 
 ---
 
