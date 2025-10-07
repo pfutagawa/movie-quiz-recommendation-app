@@ -13,7 +13,7 @@ Este projeto foi criado como um exercício prático para demonstrar habilidades 
 
 O aplicativo roda diretamente no  navegador pelo link do Expo Snack Web, sem precisar instalar nada!
 
-**[➡️ Clique aqui para acessar a demonstração ao vivo!](https://snack.expo.dev/@pfut/movie-quiz-app)**
+**[➡️ Clique aqui para acessar a live demo do app!](https://snack.expo.dev/@pfut/movie-quiz-app)**
 
 ---
 
@@ -76,17 +76,6 @@ Para executar este projeto em sua máquina local, siga os passos abaixo.
     ```
 
 Após executar o último comando, o Expo Dev Tools será aberto no seu navegador. Você poderá então rodar o app em um emulador de Android/iOS ou no seu próprio celular usando o app Expo Go.
-
----
-
-## 🖼️ Telas do App
-
-*É altamente recomendado que você tire screenshots do seu app e adicione aqui!*
-
-| Tela de Pergunta                                 | Tela de Recomendação                            |
-| ------------------------------------------------ | ----------------------------------------------- |
-| ![Tela de Pergunta](./caminho/para/sua/imagem1.png) | ![Tela de Recomendação](./caminho/para/sua/imagem2.png) |
-
 
 ---
 
