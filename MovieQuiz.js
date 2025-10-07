@@ -1,41 +1,43 @@
 import React, { useState } from 'react';
-import { Film, Check, X } from 'lucide-react';
+import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Film, Check, X } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const quizData = [
   {
     category: 'sci-fi',
-    question: "Who is Star Wars' main villain?",
+    question: "Quem é o principal vilão de Star Wars?",
     options: ['Darth Vader', 'Voldemort', 'Thanos'],
     correct: 0
   },
   {
     category: 'sci-fi',
-    question: 'In which movie does a team travel through a wormhole?',
-    options: ['Gravity', 'Interstellar', 'The Martian'],
+    question: 'Em qual filme uma equipe viaja por um buraco de minhoca?',
+    options: ['Gravidade', 'Interestelar', 'Perdido em Marte'],
     correct: 1
   },
   {
     category: 'action',
-    question: 'Who played John Wick?',
+    question: 'Quem interpretou John Wick?',
     options: ['Keanu Reeves', 'Tom Cruise', 'Matt Damon'],
     correct: 0
   },
   {
     category: 'action',
-    question: 'Which franchise features Dominic Toretto?',
-    options: ['Mission Impossible', 'Fast & Furious', 'James Bond'],
+    question: 'Qual franquia tem o personagem Dominic Toretto?',
+    options: ['Missão Impossível', 'Velozes e Furiosos', 'James Bond'],
     correct: 1
   },
   {
     category: 'comedy',
-    question: 'Who directed "The Grand Budapest Hotel"?',
+    question: 'Quem dirigiu "O Grande Hotel Budapeste"?',
     options: ['Wes Anderson', 'Quentin Tarantino', 'Christopher Nolan'],
     correct: 0
   },
   {
     category: 'comedy',
-    question: 'Which movie features the character "Ron Burgundy"?',
-    options: ['Step Brothers', 'Anchorman', 'Talladega Nights'],
+    question: 'Qual filme apresenta o personagem "Ron Burgundy"?',
+    options: ['Quase Irmãos', 'O Âncora', 'Ricky Bobby: A Toda Velocidade'],
     correct: 1
   }
 ];
@@ -61,6 +63,7 @@ const movieRecommendations = {
   }
 };
 
+// --- COMPONENTE ---
 function MovieQuiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -111,42 +114,36 @@ function MovieQuiz() {
   if (quizComplete) {
     const recommendation = getRecommendation();
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-lg w-full">
-          <div className="flex items-center justify-center mb-6">
-            <Film className="w-12 h-12 text-purple-600" />
-          </div>
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-2">
-            Sua Recomendação
-          </h2>
-          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6 mb-6">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">
-              {recommendation.title}
-            </h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              {recommendation.description}
-            </p>
-            <div className="border-t border-purple-200 pt-4">
-              <p className="text-sm font-semibold text-purple-800 mb-2">
-                📍 {recommendation.theater}
-              </p>
-              <div className="flex gap-2 flex-wrap">
+      <LinearGradient colors={['#3b0764', '#5a1d82', '#4c1d95']} style={styles.container}>
+        <SafeAreaView style={styles.card}>
+          <View style={styles.headerIconContainer}>
+            <Film color="#8b5cf6" size={48} />
+          </View>
+          <Text style={styles.recommendationTitle}>Sua Recomendação</Text>
+          
+          <LinearGradient colors={['#f5f3ff', '#eef2ff']} style={styles.recommendationBox}>
+            <Text style={styles.movieTitle}>{recommendation.title}</Text>
+            <Text style={styles.movieDescription}>{recommendation.description}</Text>
+            
+            <View style={styles.divider}>
+              <Text style={styles.theaterText}>📍 {recommendation.theater}</Text>
+              <View style={styles.showtimesContainer}>
                 {recommendation.showtimes.map((time, idx) => (
-                  <span key={idx} className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {time}
-                  </span>
+                  <View key={idx} style={styles.showtimeBadge}>
+                    <Text style={styles.showtimeText}>{time}</Text>
+                  </View>
                 ))}
-              </div>
-            </div>
-          </div>
-          <button
-            onClick={resetQuiz}
-            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg"
-          >
-            Fazer Novo Quiz
-          </button>
-        </div>
-      </div>
+              </View>
+            </View>
+          </LinearGradient>
+
+          <TouchableOpacity onPress={resetQuiz}>
+            <LinearGradient colors={['#8b5cf6', '#4f46e5']} style={styles.resetButton}>
+                <Text style={styles.resetButtonText}>Fazer Novo Quiz</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </SafeAreaView>
+      </LinearGradient>
     );
   }
 
@@ -154,55 +151,236 @@ function MovieQuiz() {
   const progress = ((currentQuestion + 1) / quizData.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-lg w-full">
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-semibold text-purple-600">
+    <LinearGradient colors={['#3b0764', '#5a1d82', '#4c1d95']} style={styles.container}>
+      <SafeAreaView style={styles.card}>
+        <View style={styles.quizHeader}> {}
+          <View style={styles.progressBarWrapper}> {}
+            <Text style={styles.progressText}>
               Pergunta {currentQuestion + 1} de {quizData.length}
-            </span>
-            <Film className="w-6 h-6 text-purple-600" />
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 h-2 rounded-full transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
+            </Text>
+            <View style={styles.progressTrack}>
+              <LinearGradient 
+                colors={['#8b5cf6', '#4f46e5']}
+                style={[styles.progressBar, { width: `${progress}%` }]}
+                start={{x: 0, y: 0}} end={{x: 1, y: 0}}
+              />
+            </View>
+          </View>
+          <Film color="#8b5cf6" size={24} style={styles.filmIcon} /> {}
+        </View>
 
-        <h2 className="text-2xl font-bold text-gray-800 mb-8 leading-tight">
-          {question.question}
-        </h2>
+        <Text style={styles.questionText}>{question.question}</Text>
 
-        <div className="space-y-3">
+        <View style={styles.optionsList}>
           {question.options.map((option, index) => {
             const isSelected = selectedAnswer === index;
             const isCorrect = index === question.correct;
             const showResult = showFeedback && isSelected;
 
+            const getOptionStyle = () => {
+              if (showResult && isCorrect) return styles.correctOption;
+              if (showResult && !isCorrect) return styles.incorrectOption;
+              if (showFeedback && !isSelected) return [styles.optionButton, styles.disabledOption];
+              return styles.optionButton;
+            };
+
             return (
-              <button
+              <TouchableOpacity
                 key={index}
-                onClick={() => handleAnswer(index)}
+                onPress={() => handleAnswer(index)}
                 disabled={showFeedback}
-                className={`w-full p-4 rounded-xl font-medium transition-all text-left flex items-center justify-between
-                  ${!showFeedback ? 'bg-gray-50 hover:bg-purple-50 hover:border-purple-300 border-2 border-gray-200' : ''}
-                  ${showResult && isCorrect ? 'bg-green-50 border-2 border-green-500' : ''}
-                  ${showResult && !isCorrect ? 'bg-red-50 border-2 border-red-500' : ''}
-                  ${showFeedback && !isSelected ? 'opacity-50' : ''}
-                `}
+                style={getOptionStyle()}
               >
-                <span className="text-gray-800">{option}</span>
-                {showResult && isCorrect && <Check className="w-5 h-5 text-green-600" />}
-                {showResult && !isCorrect && <X className="w-5 h-5 text-red-600" />}
-              </button>
+                <Text style={styles.optionText}>{option}</Text>
+                {showResult && isCorrect && <Check color="#16a34a" size={20} />}
+                {showResult && !isCorrect && <X color="#dc2626" size={20} />}
+              </TouchableOpacity>
             );
           })}
-        </div>
-      </div>
-    </div>
+        </View>
+      </SafeAreaView>
+    </LinearGradient>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 24,
+    padding: 24,
+    width: '100%',
+    maxWidth: 500,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.1,
+    shadowRadius: 20,
+    elevation: 20,
+  },
+  
+  quizHeader: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    marginBottom: 24, 
+  },
+  
+  progressBarWrapper: {
+    flex: 1, 
+    marginRight: 16, 
+  },
+  progressText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#8b5cf6',
+    marginBottom: 8, 
+  },
+  progressTrack: {
+    width: '100%',
+    backgroundColor: '#e5e7eb',
+    borderRadius: 8,
+    height: 8,
+    overflow: 'hidden',
+  },
+  progressBar: {
+    height: 8,
+    borderRadius: 8,
+  },
+  filmIcon: { 
+    alignSelf: 'flex-start', 
+  },
+  questionText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    marginBottom: 32,
+    lineHeight: 32,
+  },
+  optionsList: {
+    
+  },
+  optionButton: {
+    width: '100%',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#e5e7eb',
+    backgroundColor: '#f9fafb',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+  },
+  correctOption: {
+    width: '100%',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    borderWidth: 2,
+    backgroundColor: '#f0fdf4',
+    borderColor: '#4ade80',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+  },
+  incorrectOption: {
+    width: '100%',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    borderWidth: 2,
+    backgroundColor: '#fef2f2',
+    borderColor: '#f87171',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+  },
+  disabledOption: {
+    opacity: 0.5,
+  },
+  optionText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#1f2937',
+    flexShrink: 1,
+    marginRight: 8,
+  },
+  headerIconContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 24,
+  },
+  recommendationTitle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  recommendationBox: {
+    borderRadius: 16,
+    padding: 24,
+    marginBottom: 24,
+  },
+  movieTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    marginBottom: 12,
+  },
+  movieDescription: {
+    fontSize: 16,
+    color: '#4b5563',
+    marginBottom: 16,
+    lineHeight: 24,
+  },
+  divider: {
+    borderTopWidth: 1,
+    borderTopColor: '#d1d5db',
+    paddingTop: 16,
+  },
+  theaterText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#5b21b6',
+    marginBottom: 8,
+  },
+  showtimesContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  showtimeBadge: {
+    backgroundColor: '#8b5cf6',
+    borderRadius: 999,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+  showtimeText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  resetButton: {
+    width: '100%',
+    paddingVertical: 16,
+    borderRadius: 12,
+    alignItems: 'center',
+  },
+  resetButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+});
 
 export default MovieQuiz;
