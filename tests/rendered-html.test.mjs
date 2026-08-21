@@ -47,4 +47,8 @@ test("serves a recommendation queue without exposing an API key", async () => {
   assert.ok(Array.isArray(payload.recommendations));
   assert.ok(payload.recommendations.length >= 4);
   assert.ok(["tmdb", "demo"].includes(payload.source));
+  payload.recommendations.forEach((item) => {
+    assert.match(item.tmdbUrl, new RegExp(`/(${item.mediaType})/${item.id}$`));
+    assert.doesNotMatch(item.tmdbUrl, /\/search\?/);
+  });
 });

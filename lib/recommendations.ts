@@ -25,26 +25,26 @@ const TV_GENRES: Record<CategoryId, number> = {
 };
 
 const demoTitles: Array<Omit<Recommendation, "providers">> = [
-  { id: -101, mediaType: "movie", title: "A Chegada", year: "2016", overview: "Uma linguista tenta compreender visitantes extraterrestres antes que a tensão global se torne irreversível.", rating: 7.6, tmdbUrl: "https://www.themoviedb.org/search?query=A%20Chegada", category: "sci-fi" },
-  { id: -102, mediaType: "tv", title: "Black Mirror", year: "2011", overview: "Uma antologia inquietante sobre tecnologia, sociedade e as contradições do futuro próximo.", rating: 8.3, tmdbUrl: "https://www.themoviedb.org/search?query=Black%20Mirror", category: "sci-fi" },
-  { id: -201, mediaType: "movie", title: "Mad Max: Estrada da Fúria", year: "2015", overview: "Furiosa cruza um deserto brutal em uma fuga eletrizante contra um tirano e seu exército.", rating: 7.6, tmdbUrl: "https://www.themoviedb.org/search?query=Mad%20Max%20Estrada%20da%20Furia", category: "action" },
-  { id: -202, mediaType: "tv", title: "Reacher", year: "2022", overview: "Um ex-investigador militar encontra conspirações perigosas enquanto atravessa pequenas cidades.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/search?query=Reacher", category: "action" },
-  { id: -301, mediaType: "movie", title: "O Grande Hotel Budapeste", year: "2014", overview: "Um concierge lendário e seu jovem aprendiz se envolvem em uma herança, um roubo e uma fuga improvável.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/search?query=Grande%20Hotel%20Budapeste", category: "comedy" },
-  { id: -302, mediaType: "tv", title: "Fleabag", year: "2016", overview: "Humor afiado e vulnerabilidade acompanham uma mulher tentando reorganizar a vida em Londres.", rating: 8.3, tmdbUrl: "https://www.themoviedb.org/search?query=Fleabag", category: "comedy" },
-  { id: -401, mediaType: "movie", title: "Parasita", year: "2019", overview: "Duas famílias de classes opostas se aproximam em uma trama imprevisível sobre desigualdade e desejo.", rating: 8.5, tmdbUrl: "https://www.themoviedb.org/search?query=Parasita", category: "drama" },
-  { id: -402, mediaType: "tv", title: "Succession", year: "2018", overview: "Os herdeiros de um império de mídia disputam afeto, poder e o controle da empresa familiar.", rating: 8.3, tmdbUrl: "https://www.themoviedb.org/search?query=Succession", category: "drama" },
-  { id: -501, mediaType: "movie", title: "Corra!", year: "2017", overview: "Uma visita à família da namorada revela uma ameaça construída sob aparências cuidadosamente cordiais.", rating: 7.6, tmdbUrl: "https://www.themoviedb.org/search?query=Get%20Out", category: "horror" },
-  { id: -502, mediaType: "tv", title: "A Maldição da Residência Hill", year: "2018", overview: "Irmãos confrontam as memórias e assombrações da casa onde cresceram.", rating: 8.1, tmdbUrl: "https://www.themoviedb.org/search?query=Hill%20House", category: "horror" },
-  { id: -601, mediaType: "movie", title: "O Labirinto do Fauno", year: "2006", overview: "Na Espanha franquista, uma menina encontra um reino fantástico tão fascinante quanto ameaçador.", rating: 7.8, tmdbUrl: "https://www.themoviedb.org/search?query=Labirinto%20do%20Fauno", category: "fantasy" },
-  { id: -602, mediaType: "tv", title: "Sandman", year: "2022", overview: "Após um século aprisionado, o senhor dos sonhos precisa reconstruir seu reino e reparar antigos erros.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/search?query=Sandman", category: "fantasy" },
-  { id: -701, mediaType: "movie", title: "Homem-Aranha no Aranhaverso", year: "2018", overview: "Miles Morales encontra heróis de outras dimensões e descobre sua própria maneira de usar a máscara.", rating: 8.4, tmdbUrl: "https://www.themoviedb.org/search?query=Spider-Verse", category: "animation" },
-  { id: -702, mediaType: "tv", title: "Arcane", year: "2021", overview: "Duas irmãs ficam em lados opostos do conflito entre as cidades de Piltover e Zaun.", rating: 8.7, tmdbUrl: "https://www.themoviedb.org/search?query=Arcane", category: "animation" },
-  { id: -801, mediaType: "movie", title: "Cidade de Deus", year: "2002", overview: "Buscapé registra com sua câmera a transformação da comunidade onde cresceu e a escalada da violência.", rating: 8.4, tmdbUrl: "https://www.themoviedb.org/search?query=Cidade%20de%20Deus", category: "crime" },
-  { id: -802, mediaType: "tv", title: "Mindhunter", year: "2017", overview: "Agentes do FBI entrevistam homicidas para compreender padrões e desenvolver a análise criminal moderna.", rating: 8.1, tmdbUrl: "https://www.themoviedb.org/search?query=Mindhunter", category: "crime" },
-  { id: -901, mediaType: "movie", title: "Antes do Amanhecer", year: "1995", overview: "Dois jovens transformam uma noite caminhando por Viena em um encontro inesquecível.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/search?query=Before%20Sunrise", category: "romance" },
-  { id: -902, mediaType: "tv", title: "Normal People", year: "2020", overview: "Marianne e Connell atravessam anos de intimidade, desencontros e amadurecimento.", rating: 8.1, tmdbUrl: "https://www.themoviedb.org/search?query=Normal%20People", category: "romance" },
-  { id: -1001, mediaType: "movie", title: "Democracia em Vertigem", year: "2019", overview: "Uma perspectiva pessoal sobre a crise política brasileira e a fragilidade das instituições democráticas.", rating: 7.7, tmdbUrl: "https://www.themoviedb.org/search?query=Democracia%20em%20Vertigem", category: "documentary" },
-  { id: -1002, mediaType: "tv", title: "Planeta Terra", year: "2006", overview: "Uma viagem por ecossistemas extraordinários e pelas espécies que habitam o planeta.", rating: 8.6, tmdbUrl: "https://www.themoviedb.org/search?query=Planet%20Earth", category: "documentary" }
+  { id: 329865, mediaType: "movie", title: "A Chegada", year: "2016", overview: "Uma linguista tenta compreender visitantes extraterrestres antes que a tensão global se torne irreversível.", rating: 7.6, tmdbUrl: "https://www.themoviedb.org/movie/329865", category: "sci-fi" },
+  { id: 42009, mediaType: "tv", title: "Black Mirror", year: "2011", overview: "Uma antologia inquietante sobre tecnologia, sociedade e as contradições do futuro próximo.", rating: 8.3, tmdbUrl: "https://www.themoviedb.org/tv/42009", category: "sci-fi" },
+  { id: 76341, mediaType: "movie", title: "Mad Max: Estrada da Fúria", year: "2015", overview: "Furiosa cruza um deserto brutal em uma fuga eletrizante contra um tirano e seu exército.", rating: 7.6, tmdbUrl: "https://www.themoviedb.org/movie/76341", category: "action" },
+  { id: 108978, mediaType: "tv", title: "Reacher", year: "2022", overview: "Um ex-investigador militar encontra conspirações perigosas enquanto atravessa pequenas cidades.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/tv/108978", category: "action" },
+  { id: 120467, mediaType: "movie", title: "O Grande Hotel Budapeste", year: "2014", overview: "Um concierge lendário e seu jovem aprendiz se envolvem em uma herança, um roubo e uma fuga improvável.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/movie/120467", category: "comedy" },
+  { id: 67070, mediaType: "tv", title: "Fleabag", year: "2016", overview: "Humor afiado e vulnerabilidade acompanham uma mulher tentando reorganizar a vida em Londres.", rating: 8.3, tmdbUrl: "https://www.themoviedb.org/tv/67070", category: "comedy" },
+  { id: 496243, mediaType: "movie", title: "Parasita", year: "2019", overview: "Duas famílias de classes opostas se aproximam em uma trama imprevisível sobre desigualdade e desejo.", rating: 8.5, tmdbUrl: "https://www.themoviedb.org/movie/496243", category: "drama" },
+  { id: 76331, mediaType: "tv", title: "Succession", year: "2018", overview: "Os herdeiros de um império de mídia disputam afeto, poder e o controle da empresa familiar.", rating: 8.3, tmdbUrl: "https://www.themoviedb.org/tv/76331", category: "drama" },
+  { id: 419430, mediaType: "movie", title: "Corra!", year: "2017", overview: "Uma visita à família da namorada revela uma ameaça construída sob aparências cuidadosamente cordiais.", rating: 7.6, tmdbUrl: "https://www.themoviedb.org/movie/419430", category: "horror" },
+  { id: 72844, mediaType: "tv", title: "A Maldição da Residência Hill", year: "2018", overview: "Irmãos confrontam as memórias e assombrações da casa onde cresceram.", rating: 8.1, tmdbUrl: "https://www.themoviedb.org/tv/72844", category: "horror" },
+  { id: 1417, mediaType: "movie", title: "O Labirinto do Fauno", year: "2006", overview: "Na Espanha franquista, uma menina encontra um reino fantástico tão fascinante quanto ameaçador.", rating: 7.8, tmdbUrl: "https://www.themoviedb.org/movie/1417", category: "fantasy" },
+  { id: 90802, mediaType: "tv", title: "Sandman", year: "2022", overview: "Após um século aprisionado, o senhor dos sonhos precisa reconstruir seu reino e reparar antigos erros.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/tv/90802", category: "fantasy" },
+  { id: 324857, mediaType: "movie", title: "Homem-Aranha no Aranhaverso", year: "2018", overview: "Miles Morales encontra heróis de outras dimensões e descobre sua própria maneira de usar a máscara.", rating: 8.4, tmdbUrl: "https://www.themoviedb.org/movie/324857", category: "animation" },
+  { id: 94605, mediaType: "tv", title: "Arcane", year: "2021", overview: "Duas irmãs ficam em lados opostos do conflito entre as cidades de Piltover e Zaun.", rating: 8.7, tmdbUrl: "https://www.themoviedb.org/tv/94605", category: "animation" },
+  { id: 598, mediaType: "movie", title: "Cidade de Deus", year: "2002", overview: "Buscapé registra com sua câmera a transformação da comunidade onde cresceu e a escalada da violência.", rating: 8.4, tmdbUrl: "https://www.themoviedb.org/movie/598", category: "crime" },
+  { id: 67744, mediaType: "tv", title: "Mindhunter", year: "2017", overview: "Agentes do FBI entrevistam homicidas para compreender padrões e desenvolver a análise criminal moderna.", rating: 8.1, tmdbUrl: "https://www.themoviedb.org/tv/67744", category: "crime" },
+  { id: 76, mediaType: "movie", title: "Antes do Amanhecer", year: "1995", overview: "Dois jovens transformam uma noite caminhando por Viena em um encontro inesquecível.", rating: 8.0, tmdbUrl: "https://www.themoviedb.org/movie/76", category: "romance" },
+  { id: 89905, mediaType: "tv", title: "Normal People", year: "2020", overview: "Marianne e Connell atravessam anos de intimidade, desencontros e amadurecimento.", rating: 8.1, tmdbUrl: "https://www.themoviedb.org/tv/89905", category: "romance" },
+  { id: 566221, mediaType: "movie", title: "Democracia em Vertigem", year: "2019", overview: "Uma perspectiva pessoal sobre a crise política brasileira e a fragilidade das instituições democráticas.", rating: 7.7, tmdbUrl: "https://www.themoviedb.org/movie/566221", category: "documentary" },
+  { id: 1044, mediaType: "tv", title: "Planeta Terra", year: "2006", overview: "Uma viagem por ecossistemas extraordinários e pelas espécies que habitam o planeta.", rating: 8.6, tmdbUrl: "https://www.themoviedb.org/tv/1044", category: "documentary" }
 ];
 
 const demoProvider: StreamingProvider = {
@@ -137,7 +137,6 @@ async function providersFor(mediaType: "movie" | "tv", id: number) {
   const chosen = (preferred.length ? preferred : all).slice(0, 4);
 
   return {
-    link: brazil?.link,
     providers: chosen.map((provider) => ({
       id: provider.provider_id,
       name: provider.provider_name,
@@ -200,7 +199,7 @@ export async function getRecommendations(
           backdropUrl: item.backdrop_path ? `${TMDB_IMAGE_URL}/w1280${item.backdrop_path}` : undefined,
           rating: Number((item.vote_average ?? 0).toFixed(1)),
           providers: watch.providers,
-          tmdbUrl: watch.link ?? `https://www.themoviedb.org/${mediaType}/${item.id}`,
+          tmdbUrl: `https://www.themoviedb.org/${mediaType}/${item.id}`,
           category,
         } satisfies Recommendation;
       }),
