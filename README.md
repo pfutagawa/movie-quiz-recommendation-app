@@ -7,7 +7,9 @@ Um quiz gamificado de cinema e televisão que transforma o desempenho do jogador
 
 > **Acerte. Descubra. Dê play.**
 
-**[Abrir demonstração funcional](https://cinequiz-br.vercel.app)**\n\n![Tela de resultado do CineQuiz BR com recomendação real do TMDB](docs/cinequiz-recommendation.jpg)
+**[Abrir demonstração funcional](https://cinequiz-br.vercel.app)**
+
+![Tela de resultado do CineQuiz BR com recomendação real do TMDB](docs/cinequiz-recommendation.jpg)
 
 ## O produto
 
