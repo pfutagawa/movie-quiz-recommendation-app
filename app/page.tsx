@@ -28,11 +28,14 @@ function recommendationKey(item: Pick<Recommendation, "id" | "mediaType">) {
 
 function BrandMark() {
   return (
-    <span className="brand-mark" aria-hidden="true">
-      <span />
-      <span />
-      <span />
-    </span>
+    <Image
+      className="brand-mark"
+      src="/favicon.svg"
+      alt=""
+      width={64}
+      height={64}
+      aria-hidden="true"
+    />
   );
 }
 

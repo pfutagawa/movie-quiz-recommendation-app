@@ -42,9 +42,7 @@ button { color: inherit; }
 .site-header { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .brand { border: 0; background: transparent; display: inline-flex; align-items: center; gap: 10px; padding: 8px 0; cursor: pointer; font-weight: 850; letter-spacing: -.035em; font-size: 20px; }
 .brand small { color: var(--accent); font-size: 10px; letter-spacing: .14em; align-self: flex-start; margin-top: 5px; }
-.brand-mark { width: 28px; height: 28px; border: 2px solid currentColor; border-radius: 50%; display: inline-grid; grid-template-columns: repeat(3, 1fr); align-items: center; padding: 4px; gap: 2px; }
-.brand-mark span { width: 4px; height: 4px; background: currentColor; border-radius: 50%; }
-.brand-mark span:nth-child(2) { align-self: end; }
+.brand-mark { width: 34px; height: 34px; display: block; flex: 0 0 auto; object-fit: contain; }
 .header-note { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .13em; }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(115,224,173,.11); }
 
@@ -77,7 +75,7 @@ button { color: inherit; }
 .ticket-tear::before { left: -13px; }
 .ticket-tear::after { right: -13px; }
 .ticket-bottom { position: absolute; left: 30px; right: 30px; bottom: 26px; }
-.ticket-bottom .brand-mark { width: 24px; height: 24px; }
+.ticket-bottom .brand-mark { width: 27px; height: 27px; }
 
 .quiz-layout { max-width: 880px; padding: 62px 0 96px; }
 .quiz-toolbar { display: flex; justify-content: space-between; align-items: end; margin-bottom: 24px; }
@@ -132,7 +130,7 @@ button { color: inherit; }
 .poster::after { content: ""; position: absolute; inset: 0; box-shadow: inset -35px 0 55px rgba(0,0,0,.2); pointer-events: none; }
 .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .poster-fallback { height: 100%; min-height: 400px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 26px; background: repeating-linear-gradient(135deg, transparent 0 26px, rgba(255,255,255,.025) 26px 27px); }
-.poster-fallback .brand-mark { position: absolute; top: 28px; left: 26px; width: 42px; height: 42px; color: var(--accent); }
+.poster-fallback .brand-mark { position: absolute; top: 28px; left: 26px; width: 54px; height: 54px; }
 .poster-fallback > span { color: var(--accent); text-transform: uppercase; font-size: 10px; letter-spacing: .18em; font-weight: 800; }
 .poster-fallback strong { margin-top: 10px; font-family: Georgia, serif; font-size: 29px; line-height: 1; }
 .media-badge { position: absolute; z-index: 1; top: 14px; right: 14px; padding: 7px 10px; border-radius: 999px; background: rgba(7,8,14,.78); backdrop-filter: blur(10px); color: #fff; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; }
