@@ -7,7 +7,7 @@ Um quiz gamificado de cinema e televisão que transforma o desempenho do jogador
 
 > **Acerte. Descubra. Dê play.**
 
-**[Abrir demonstração funcional](https://cinequiz-br.mybetterhalf47092.chatgpt.site)**
+**[Abrir demonstração funcional](https://cinequiz-br.vercel.app)**
 
 ## O produto
 
@@ -86,7 +86,7 @@ npm test
 
 ## Publicar na Vercel
 
-O repositório inclui uma configuração própria para a Vercel sem alterar a construção usada pela demonstração atual.
+O repositório inclui uma configuração própria para a Vercel sem alterar a construção usada pela publicação alternativa.
 
 1. Importe este repositório pelo painel da Vercel.
 2. Mantenha o framework detectado como **Next.js**.
