@@ -84,6 +84,18 @@ npm run lint
 npm test
 ```
 
+## Publicar na Vercel
+
+O repositório inclui uma configuração própria para a Vercel sem alterar a construção usada pela demonstração atual.
+
+1. Importe este repositório pelo painel da Vercel.
+2. Mantenha o framework detectado como **Next.js**.
+3. Em **Environment Variables**, cadastre `TMDB_API_READ_TOKEN` como segredo para Production, Preview e Development.
+4. Cadastre também `NEXT_PUBLIC_SITE_URL` com o endereço público atribuído pela Vercel.
+5. Inicie a implantação. O arquivo `vercel.json` seleciona automaticamente o build correto.
+
+Nunca salve o token em arquivos do projeto ou no GitHub.
+
 ## Estrutura principal
 
 ```text
